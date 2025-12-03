@@ -4,8 +4,10 @@
   "type": "module",
   "description": "A script to organize your downloads folder in the background",
   "main": "app.js",
+  "bin": "app.js",
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "build": "pkg . --targets node18-win-x64 --download-organizer.exe"
   },
   "keywords": [
     "download",
@@ -16,5 +18,8 @@
   "packageManager": "pnpm@10.24.0",
   "dependencies": {
     "chokidar": "^5.0.0"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
   }
 }
