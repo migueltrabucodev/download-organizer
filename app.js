@@ -33,6 +33,6 @@ watcher.on("add", async (filePath) => {
     const finalPath = path.join(subDir, fileName);
     await fs.rename(filePath, finalPath);
   } catch (error) {
-    console.log(error);
+    await fs.writeFile("error_downolad-organizer.txt", error.toString());
   }
 });
