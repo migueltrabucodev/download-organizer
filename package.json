@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A script to organize your downloads folder in the background",
-  "main": "app.js",
+  "main": "./src/app.js",
   "bin": "./dist/bundle.js",
   "scripts": {
-    "start": "node ./app.js",
+    "start": "node ./src/app.js",
     "build": "pnpm bundle && pkg . --targets node18-win-x64 --output ./dist/download-organizer.exe --no-bytecode",
-    "bundle": "esbuild app.js --bundle --platform=node --target=node18 --outfile=dist/bundle.js --format=cjs"
+    "bundle": "esbuild ./src/app.js --bundle --platform=node --target=node18 --outfile=dist/bundle.js --format=cjs"
   },
   "keywords": [
     "download",
