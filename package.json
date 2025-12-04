@@ -1,6 +1,6 @@
 {
   "name": "download-organizer",
-  "version": "1.0.0",
+  "version": "v1.0.0",
   "type": "module",
   "description": "A script to organize your downloads folder in the background",
   "main": "./src/app.js",
