@@ -8,6 +8,14 @@ hideWindow();
 
 const userHome = os.homedir();
 const downloadsDir = path.join(userHome, "Downloads");
+const ignoredExtension = [
+  "crdownload",
+  "part",
+  "tmp",
+  "ini",
+  "lnk",
+  "download",
+];
 
 const watcher = chokidar.watch(downloadsDir, {
   persistent: true,
@@ -21,6 +29,10 @@ const watcher = chokidar.watch(downloadsDir, {
 watcher.on("add", async (filePath) => {
   try {
     const rawExtension = path.extname(filePath).slice(1);
+
+    if (ignoredExtension.includes(rawExtension)) {
+      return;
+    }
 
     const formatedExtension =
       rawExtension.charAt(0).toUpperCase() +
